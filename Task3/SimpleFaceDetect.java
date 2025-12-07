@@ -2,14 +2,15 @@ import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
+import nu.pattern.OpenCV;
 
 public class SimpleFaceDetect {
 
     public static void main(String[] args) {
 
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        OpenCV.loadLocally();
 
-        CascadeClassifier faceCascade = new CascadeClassifier("haarcascade_frontalface_default.xml");
+        CascadeClassifier faceCascade = new CascadeClassifier("haarcascade_frontalface_default");
 
         Mat originalImage = Imgcodecs.imread("input.jpg");
 
